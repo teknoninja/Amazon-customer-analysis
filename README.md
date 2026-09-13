@@ -16,11 +16,38 @@ For every inbound customer message the agent returns:
 
 ## Reproduce headline results (< 15 minutes)
 
-### Prerequisites
-- Python 3.9+
-- Free [Groq API key](https://console.groq.com/keys)
-- Kaggle account + **API token** (`KAGGLE_API_TOKEN=KGAT_...` from [Kaggle settings → API](https://www.kaggle.com/settings/api)) **or** a manual download of [Customer Support on Twitter](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter)
+### Reviewer Fast-Track (Run Evaluation Only)
+Since the database and golden set are 
+already included in the repository, you can evaluate the agent immediately: 
+1. Set your own GROQ_API_KEY in your .env file. I have included an .env example file 
+in Repo. 
+2. Activate a virtual environment venv and install dependencies: pip install -r 
+requirements.txt 
+3. Run the evaluation: python evaluation.py 
+4. View metrics in the terminal or run mlflow ui to view the side-by-side comparison.
 
+### B. Full Pipeline Reproduction (Optional) 
+If you wish to rebuild the vector database and evaluation sets from scratch (typically this can take more time): 
+1. Set your own GROQ_API_KEY and KAGGLE_TOKEN in your .env file. I have 
+included an .env example file in Repo. 
+2. Activate a virtual environment venv and install dependencies: pip install -r 
+requirements.txt 
+3. Download data from kaggle: python download_data.py 
+4. Process data and build ChromaDB: python data_processing.py && python 
+rag_pipeline.py 
+5. Generate new silver labels: python golden_set_generator.py ,it will generate 
+golden set csv file in data folder. 
+6. Verify golden_set_generator.csv manually and add human intent/actions wherever 
+needed the AI agent will prioritize those. 
+7. Run the evaluation: python evaluation.py ,it will generate 
+llm_judge_scores.csv file in data folder.  
+8. Copy the customer_text column from llm_judge_scores.csv to a new csv file 
+human_reply_ratings.csv and provide Human ratings . This is necessary to evaluate 
+llm on human basis and compare AI response . 
+9. Again run the evaluation ,python evaluation.py this time it will log the scores and 
+metrics on console and in MLflow ui. 
+10. (optional) Run Mlflow ui for comparison of different Results and baselines. 
+11. Generate this report: python generate_report_pdf.py   
 ### 1. Environment
 ```bash
 python3 -m venv venv
