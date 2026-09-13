@@ -2,7 +2,7 @@
 
 Hiver SDE Intern take-home: an AI customer-support agent for **@AmazonHelp** on Twitter.
 
-> 📄 **Note to Reviewer:** Please see `Report.pdf` (included in this repository) for the full architectural breakdown, failure analysis, and design decisions!
+> 📄 **Note to Reviewer:** Please see `Report pdf.pdf` (included in this repository) for the full architectural breakdown, failure analysis, and design decisions!
 
 For every inbound customer message the agent returns:
 1. **Intent** — one of a small fixed set
@@ -16,7 +16,7 @@ For every inbound customer message the agent returns:
 
 ## Reproduce headline results (< 15 minutes)
 
-### Reviewer Fast-Track (Run Evaluation Only)
+### A. Reviewer Fast-Track (Run Evaluation Only)
 Since the database and golden set are 
 already included in the repository, you can evaluate the agent immediately: 
 1. Set your own GROQ_API_KEY in your .env file. I have included an .env example file 
