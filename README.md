@@ -2,7 +2,7 @@
 
  AI customer-support agent for **@AmazonHelp** on Twitter.
 
-> 📄 **Note to Reviewer:** Please see `Report pdf.pdf` (included in this repository) for the detailed architectural breakdown, failure analysis, and design decisions!
+> 📄 **Note to Reviewer:** Please see `Report pdf.pdf` (included in this repository) for Setup run , detailed architectural breakdown, failure analysis, and design decisions!
 
 For every inbound customer message the agent returns:
 1. **Intent** — one of a small fixed set
