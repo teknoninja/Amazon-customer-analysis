@@ -1,0 +1,11 @@
+.env
+venv/
+__pycache__/
+*.pyc
+mlruns/
+
+# --- CRITICAL: Ignore the massive 500MB raw Kaggle dataset ---
+data/twcs/
+
+# (We are deliberately NOT ignoring data/* or .chroma/ so that 
+# your database and evaluation CSVs get pushed to GitHub)

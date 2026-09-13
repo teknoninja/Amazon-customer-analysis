@@ -1,0 +1,11 @@
+pandas
+numpy
+kaggle>=1.7.4
+openai
+pydantic
+chromadb
+mlflow
+python-dotenv
+scikit-learn
+fpdf2
+requests
