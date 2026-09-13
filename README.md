@@ -2,6 +2,8 @@
 
 Hiver SDE Intern take-home: an AI customer-support agent for **@AmazonHelp** on Twitter.
 
+> 📄 **Note to Reviewer:** Please see `Report.pdf` (included in this repository) for the full architectural breakdown, failure analysis, and design decisions!
+
 For every inbound customer message the agent returns:
 1. **Intent** — one of a small fixed set
 2. **Draft reply** — grounded in historical AmazonHelp resolutions (RAG)
